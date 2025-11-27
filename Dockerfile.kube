@@ -15,7 +15,7 @@ USER keycloak
 WORKDIR /opt/keycloak
 
 ADD ./addons/themes/ /opt/keycloak/themes/
-
+ADD ./addons/providers/ /opt/keycloak/providers/
 RUN /opt/keycloak/bin/kc.sh build --cache-stack=kubernetes
 
 FROM quay.io/keycloak/keycloak:latest

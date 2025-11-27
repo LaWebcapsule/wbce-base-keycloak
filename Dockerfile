@@ -20,7 +20,7 @@ RUN chown -R keycloak:keycloak /opt/keycloak/providers
 USER keycloak
 
 ADD ./addons/themes/ /opt/keycloak/themes/
-
+ADD ./addons/providers/ /opt/keycloak/providers/
 RUN /opt/keycloak/bin/kc.sh build --features=admin-fine-grained-authz
 
 FROM quay.io/keycloak/keycloak:26.4
